@@ -15,7 +15,7 @@ class CheckValidationController extends GetxController{
 
   RxBool isPasswordVisible = false.obs;
   RxBool isConfirmPasswordVisible = false.obs;
-  var isChecked = false.obs;
+  var isSelected = false.obs;
 
   // Toggle password visibility
   void togglePasswordVisibility() {

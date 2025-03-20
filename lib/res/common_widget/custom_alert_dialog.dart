@@ -13,7 +13,10 @@ class CustomAlertDialog {
     required String NegativebuttonText,
     required String PositivvebuttonText,
     required VoidCallback onPositiveButtonPressed,
-    required VoidCallback onNegativeButtonPressed
+    VoidCallback? onNegativeButtonPressed,
+    bool? isTitle = true,
+    Color? buttonColor,
+    final Color? titleColor
 }) {
     return showDialog(
       context: context,
@@ -23,14 +26,14 @@ class CustomAlertDialog {
           content: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Text(
+              isTitle == true? Text(
                 title,
                 textAlign: TextAlign.center,
                 style: GoogleFonts.urbanist(
                   fontWeight: FontWeight.w700,
                   fontSize: 20,
                 ),
-              ),
+              ):SizedBox(),
               Text(
                 message,
                 textAlign: TextAlign.center,
@@ -45,6 +48,8 @@ class CustomAlertDialog {
                   Expanded(
                     child: CustomButton(
                         title: PositivvebuttonText,
+                        titleColor: titleColor?? Colors.white,
+                        buttonColor: buttonColor?? AppColors.mainColor,
                         padding_vertical: 10,
                         fontSize: 14,
                         onTap: onPositiveButtonPressed
@@ -59,7 +64,7 @@ class CustomAlertDialog {
                         titleColor: AppColors.mainColor,
                         border: Border.all(color: AppColors.mainColor),
                         fontSize: 14,
-                        onTap: onNegativeButtonPressed
+                        onTap: onNegativeButtonPressed ?? () => Navigator.pop(context),
                     ),
                   ),
                 ],

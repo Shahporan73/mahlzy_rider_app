@@ -1,6 +1,3 @@
-// ignore_for_file: prefer_const_constructors
-
-
 import '../app_constant/import_list.dart';
 
 class CustomRadioButton extends StatelessWidget {
@@ -23,10 +20,11 @@ class CustomRadioButton extends StatelessWidget {
       child: Row(
         children: options.map((option) {
           return Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Radio<String>(
                 value: option,
-                // fillColor: MaterialStateProperty.all(AppColors.primaryColor),
                 groupValue: selectedValue,
                 onChanged: (value) {
                   if (value != null) {
@@ -35,6 +33,7 @@ class CustomRadioButton extends StatelessWidget {
                 },
                 activeColor: selectedColor,
               ),
+              SizedBox(width: 0), // Reduce the space between the Radio button and the text
               Text(
                 option,
                 style: GoogleFonts.urbanist(
@@ -42,7 +41,7 @@ class CustomRadioButton extends StatelessWidget {
                   fontSize: 14,
                 ),
               ),
-              if (option != options.last) SizedBox(width: 20),
+              if (option != options.last) SizedBox(width: 8), // Reduce space between options
             ],
           );
         }).toList(),
