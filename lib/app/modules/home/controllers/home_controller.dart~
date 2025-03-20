@@ -1,0 +1,36 @@
+import 'package:get/get.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
+
+class HomeController extends GetxController {
+  var initialPosition = LatLng(48.7665, 11.4257).obs;
+  var markers = <Marker>{}.obs;
+  var orders = <Order>[].obs;
+
+  void onMapCreated(GoogleMapController controller) {
+    // Store the controller if needed
+  }
+
+  @override
+  void onInit() {
+    // TODO: implement onInit
+    super.onInit();
+    fetchOrders();
+  }
+
+  void fetchOrders() {
+    orders.value = [
+      Order("Bezirkssportanlage", "Engelschalking", 6.39, 6.39),
+      Order("Other Location", "Munich Center", 7.99, 5.50),
+    ];
+  }
+}
+
+/// Order Model
+class Order {
+  final String deliveryAddress;
+  final String location;
+  final double foodPrice;
+  final double deliveryPrice;
+
+  Order(this.deliveryAddress, this.location, this.foodPrice, this.deliveryPrice);
+}

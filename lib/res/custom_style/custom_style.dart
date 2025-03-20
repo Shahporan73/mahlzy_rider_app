@@ -18,4 +18,13 @@ TextStyle customLabelStyle = GoogleFonts.urbanist(
   color: Colors.black,
 );
 
+TextStyle titleStyle = GoogleFonts.jua(
+  fontWeight: FontWeight.w400,
+  fontSize: 16,
+  color: Colors.black,
+);
+
+
 EdgeInsetsGeometry bodyPadding = EdgeInsets.only(top: 16, left: 16, right: 16);
+
+

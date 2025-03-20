@@ -10,3 +10,4 @@ export 'package:mahlzy_rider_app/res/common_widget/custom_text.dart';
 export 'package:mahlzy_rider_app/res/custom_style/custom_size.dart';
 export '../../../../res/common_widget/custom_clip_path_radius_widget.dart';
 export '../../../../res/utils/check_validation_controller.dart';
+export 'package:image_picker/image_picker.dart';

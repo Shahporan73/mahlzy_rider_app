@@ -1,23 +1,17 @@
 import 'package:get/get.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class HomeController extends GetxController {
-  //TODO: Implement HomeController
+  var initialPosition = LatLng(48.7665, 11.4257).obs;
+  var markers = <Marker>{}.obs;
 
-  final count = 0.obs;
+  void onMapCreated(GoogleMapController controller) {
+    // Store the controller if needed
+  }
+
   @override
   void onInit() {
+    // TODO: implement onInit
     super.onInit();
   }
-
-  @override
-  void onReady() {
-    super.onReady();
-  }
-
-  @override
-  void onClose() {
-    super.onClose();
-  }
-
-  void increment() => count.value++;
 }

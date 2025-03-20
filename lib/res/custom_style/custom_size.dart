@@ -27,4 +27,14 @@ extension SpacingExtension on int {
 }
 
 
+ EdgeInsetsGeometry bodyPadding = EdgeInsets.only(
+    top: 16,
+    left: 16,
+    right: 16,
+    bottom: 0
+);
+
+
+
+
 
